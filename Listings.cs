@@ -2,50 +2,35 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Online_Shopping_Project
+namespace UML_Project_online_Shopping
 {
     class Listings
     {
-        private string name_of_the_listing;
+        public int id;
+        public Seller s;
+      private  string name_of_the_listing;
         private string description;
-        private double price_;
-        private int number_of_items;
-		public Listings()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public string GetName_of_the_listing()
-		{
-			return this.name_of_the_listing;
-		}
-		public void SetName_of_the_listing(ref string name_of_the_listing)
-		{
-			this.name_of_the_listing = name_of_the_listing;
-		}
-		public string GetDescription()
-		{
-			return this.description;
-		}
-		public void SetDescription(ref string description)
-		{
-			this.description = description;
-		}
-		public double GetPrice_()
-		{
-			return this.price_;
-		}
-		public void SetPrice_(ref double price_)
-		{
-			this.price_ = price_;
-		}
-		public int GetNumber_of_items()
-		{
-			return this.number_of_items;
-		}
-		public void SetNumber_of_items(ref int number_of_items)
-		{
-			this.number_of_items = number_of_items;
-		}
 
-	}
+        private int price;
+
+        private int number_of_items;
+
+        public Listings(string name_of_the_listing, string description, int price, int number_of_items)
+        {
+            this.Name_of_the_listing = name_of_the_listing;
+            this.Description = description;
+            this.Price = price;
+            this.Number_of_items = number_of_items;
+        }
+
+        public override string ToString()
+        {
+            return s.ToString()+"\n"+ id+"\t"+name_of_the_listing+ "\t" + description+"\t"+ price+ "\t" + number_of_items;
+        }
+
+        public string Name_of_the_listing { get => name_of_the_listing; set => name_of_the_listing = value; }
+        public string Description { get => description; set => description = value; }
+        public int Price { get => price; set => price = value; }
+        public int Number_of_items { get => number_of_items; set => number_of_items = value; }
+    }
 }
