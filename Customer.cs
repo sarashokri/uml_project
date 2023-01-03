@@ -2,108 +2,88 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Online_Shopping_Project
+namespace UML_Project_online_Shopping
 {
     class Customer
     {
-		private string name;
-		private string shipping_address;
-		private string email_address;
-		private string phone_number;
-		private string password;
-		private Payment payment_information;
+      private  int customer_id;
+        private List<Listings> cart;
+        public Customer(int customer_id, string name, string shipping_address, string email_address, int phone_number, string password, Payment payment_info)
+        {
+            this.Customer_id = customer_id;
+            this.Name = name;
+            this.Shipping_address = shipping_address;
+            this.Email_address = email_address;
+            this.Phone_number = phone_number;
+            this.Password = password;
+            this.Payment_info = payment_info;
+            cart = new List<Listings>();
+        }
+        void Sign_upFor_buyer_account()
+        {
+            Console.WriteLine("Plz Input your data like : int customer_id, string name, string shipping_address, string email_address, int phone_number, string password,int card_number, int pin_code, string billing_addres");
+            string input = Console.ReadLine();
+            string[] all = input.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.Customer_id = int.Parse(all[0]);
+            this.Name = all[1];
+            this.Shipping_address = all[2];
+            this.Email_address = all[3];
+            this.Phone_number = int.Parse(all[4]); 
+            this.Password = all[5];
+            this.Payment_info = new Payment(int.Parse(all[6]), int.Parse(all[7]), (all[8]));
+            cart = new List<Listings>();
+        }
+void View_all_available_listings()
+        {
+            foreach(Listings l in Program.all_Listings)
+            {
+                Console.WriteLine(l.ToString());
+            }
+        }
+        void View_a_hosen_listing_information()
+        {
 
-		public string GetName()
-		{
-			return this.name;
-		}
-		public void SetName(ref string name)
-		{
-			this.name = name;
-		}
-		public string GetShipping_address()
-		{
-			return this.shipping_address;
-		}
-		public void SetShipping_address(ref string shipping_address)
-		{
-			this.shipping_address = shipping_address;
-		}
-		public string GetEmail_address()
-		{
-			return this.email_address;
-		}
-		public void SetEmail_address(ref string email_address)
-		{
-			this.email_address = email_address;
-		}
-		public string GetPhone_number()
-		{
-			return this.phone_number;
-		}
-		public void SetPhone_number(ref string phone_number)
-		{
-			this.phone_number = phone_number;
-		}
-		public string GetPassword()
-		{
-			return this.password;
-		}
-		public void SetPassword(ref string password)
-		{
-			this.password = password;
-		}
-		public Payment GetPayment_information()
-		{
-			return this.payment_information;
-		}
-		public void SetPayment_information(ref Payment payment_information)
-		{
-			this.payment_information = payment_information;
-		}
-		public void Sign_up()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Login()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Search_for_a_listing()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Change_account_information()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Checkout_listings()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void View_added_listings_to_their_cart()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Edit_added_listings_to_their_cart()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void Add_a_listing_to_their_cart()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void View_a_chosen_listing_information()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public void View_all_available_listings()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-		public Customer()
-		{
-			throw new System.NotImplementedException("Not implemented");
-		}
-	}
+        }
+        void Add_A_listing_to_their_cart()
+        {
+
+        }
+        void View_Edit_added_listings_to_their_cart()
+        {
+
+        }
+        void Checkout_listingsO()
+        {
+
+        }
+        void Change_account_information()
+        {
+
+        }
+        void search_fora_listing()
+        {
+
+        }
+        void Login_For_buyer_account()
+        {
+
+        }
+        private string name;
+
+        private string shipping_address;
+        private string email_address;
+
+        private int phone_number;
+        private string password;
+
+        private Payment payment_info;
+
+        public int Customer_id { get => customer_id; set => customer_id = value; }
+        public string Name { get => name; set => name = value; }
+        public string Shipping_address { get => shipping_address; set => shipping_address = value; }
+        public string Email_address { get => email_address; set => email_address = value; }
+        public int Phone_number { get => phone_number; set => phone_number = value; }
+        public string Password { get => password; set => password = value; }
+        internal Payment Payment_info { get => payment_info; set => payment_info = value; }
+    }
 }
