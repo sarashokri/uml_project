@@ -21,9 +21,9 @@ namespace UML_Project_online_Shopping
         {
             return "Card_number : "+ Card_number+ " pin_code : " + pin_code + " billing_addres : " + Billing_addres;
         }
-        public bool Holder(Customer c)
+        public bool Holder(int card, int pin)
         {
-            return c.Payment_info.pin_code == this.pin_code && c.Payment_info.Billing_addres == this.Billing_addres && c.Payment_info.Card_number == this.Card_number;
+            return pin == this.pin_code &&  card == this.Card_number;
         }
         public int Card_number { get => card_number; set => card_number = value; }
         public int Pin_code { get => pin_code; set => pin_code = value; }
