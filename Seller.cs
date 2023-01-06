@@ -27,8 +27,23 @@ namespace UML_Project_online_Shopping
             this.Store_name = all[5];
 
         }
+        void Login_For_Seller_account()
+        {
+            Console.WriteLine("Email address ");
+            string em = Console.ReadLine();
+            Console.WriteLine("Password ");
+            string pa = Console.ReadLine();
+            foreach (Seller l in Program.all_Seller)
+            {
+                if (l.email_address.Equals(em) && l.password.Equals(pa))
+                {
+                    Program.login_s = l;
+                    break;
+                }
+            }
 
-void Adding_new_Listings()
+        }
+        void Adding_new_Listings()
         {
             Console.WriteLine("Input All info : ");
             Console.WriteLine("Plz Input your data like : string name_of_the_listing, string description, int price, int number_of_items");
